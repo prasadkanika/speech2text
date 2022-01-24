@@ -15,12 +15,37 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+		.bgimg{
+			background-image: url("cover.jpg");
+			background-repeat: no-repeat;background-size: 100% 100%;
+		};
+</style>
 </head>
 
 <body>
-	<div id="output"></div>
+
+
+	<nav class="navbar-fluid  bg-dark  navbar-expand-sm" >
+
+        <div class='jumbotron text-center bgimg' >
+            <div class='tb'>
+            <h1 class='text-black '></h1>
+            <span class='text-black' style='font-size:3.5em;'>Speech To Text <br/> </span><br/>
+            </div>
+        </div>
+    </nav>
+
+
+	<div class='container p-4'>
+		<div class='row p-3'>
+			<div id="output" style='font-size:1.7em;'></div>
+		</div>
 	<button onclick="recognition.start()">Start</button>
 	<button onclick="recognition.stop()">Stop</button>
+</div>
+
+
 	<script>
 
 				var recognition = new webkitSpeechRecognition();
@@ -28,7 +53,7 @@
 				var output = document.getElementById('output');
 				recognition.onresult = function(event)
 										{
-  											output.textContent = event.results[0][0].transcript;
+  				 							output.textContent = event.results[0][0].transcript;
 										};
 
 
